@@ -1,10 +1,10 @@
-# Compliance — checklist de boas práticas
+# Conformidade: checklist de boas práticas
 
 Checklist de preparação, manutenção, governança e sustentabilidade dos projetos do [Rondoscópio](https://github.com/Rondoscopio), com base no [Open Source Guides](https://opensource.guide/) e adaptações às necessidades da iniciativa.
 
-**Finalidade:** orientar avaliações e melhorias. Esta lista não é certificação de conformidade, avaliação jurídica nem declaração de que cada prática já esteja implementada. Os itens começam desmarcados porque ainda precisam de verificação; uma caixa desmarcada não prova ausência da prática. A conclusão deve ser acompanhada, quando possível, de referência verificável (arquivo, configuração, issue, commit, política ou procedimento).
+**Finalidade:** orientar avaliações e melhorias. Esta lista não é certificação de conformidade, avaliação jurídica nem declaração de que cada prática já esteja implementada. Os itens começam desmarcados porque ainda precisam de verificação. Uma caixa desmarcada não prova ausência da prática. A conclusão deve ser acompanhada, quando possível, de referência verificável (arquivo, configuração, issue, commit, política ou procedimento).
 
-**Estado dos projetos:** em formação. As práticas aplicáveis dependem do estágio e da natureza de cada repositório; itens relativos a software executável e serviços em operação podem ser tratados como não aplicáveis enquanto esses componentes não existirem.
+**Estado dos projetos:** em formação. As práticas aplicáveis dependem do estágio e da natureza de cada repositório. Itens relativos a software executável e serviços em operação podem ser tratados como não aplicáveis enquanto esses componentes não existirem.
 
 ## Como acompanhar
 
