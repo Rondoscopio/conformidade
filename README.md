@@ -432,6 +432,434 @@ Um item só deverá ser marcado como concluído quando houver evidência de conf
 
 **Critério de aceite da seção:** evidência verificável de configuração e execução para cada requisito aplicável, com responsáveis, tratamento de exceções e revisão periódica. A presente checklist não equivale a certificação de segurança ou aprovação formal de tecnologia.
 
+## 12. Normas e referenciais de qualidade e conformidade
+
+Esta seção reúne normas e referenciais para eventual aplicação aos projetos do Rondoscópio. Os textos abaixo são sínteses de planejamento e não reproduzem os requisitos normativos integrais. Para auditorias e alegações formais de conformidade, consultar a edição oficial, o escopo completo, as cláusulas aplicáveis e as condições de avaliação.
+
+**Interpretação:** algumas referências estabelecem requisitos de sistemas de gestão, outras trazem orientações, métricas, vocabulários ou formatos de relatório. Nem todas admitem certificação. A simples citação de uma norma não significa conformidade do projeto. Requisitos setoriais, como PCI DSS, só se aplicam quando o escopo efetivamente os alcança. Os exemplos de evidência são recomendações operacionais do Rondoscópio.
+
+### 12.1. Referências centrais
+
+#### PCI DSS v4.0.1
+
+**Fonte:** [organização responsável](https://www.pcisecuritystandards.org/pt/document_library/).
+
+**O que estabelece ou orienta:** Proteção de ambientes que armazenam, processam ou transmitem dados de titulares de cartões. Seus 12 grupos de requisitos tratam de redes, configurações, dados, criptografia, malware, desenvolvimento seguro, acessos, autenticação, proteção física, registros, testes e políticas.
+
+**Como avaliar a aplicação:** Delimitar o ambiente de dados de cartão e avaliar cada requisito aplicável. Não é exigência geral de todo repositório sem vínculo com pagamentos.
+
+**Evidências sugeridas:** Inventário de fluxos, escopo do ambiente, controles, relatórios de testes e avaliação PCI.
+
+- [ ] Avaliar a aplicabilidade de PCI DSS v4.0.1, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO 24183:2024
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/78009.html).
+
+**O que estabelece ou orienta:** Vocabulário da comunicação técnica, para padronizar conceitos utilizados na criação e no uso de produtos de informação. Não é norma de métricas de código.
+
+**Como avaliar a aplicação:** Adotar terminologia consistente para manuais, documentação técnica e orientação a colaboradores.
+
+**Evidências sugeridas:** Glossário e revisão de terminologia de documentos.
+
+- [ ] Avaliar a aplicabilidade de ISO 24183:2024, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 25066:2016, retirada
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/63831.html).
+
+**O que estabelece ou orienta:** Formato comum de relatórios de avaliação de usabilidade, com informações sobre métodos, resultados e contexto de avaliação. A edição foi retirada.
+
+**Como avaliar a aplicação:** Utilizar como referência histórica para relatórios e revisar normas vigentes antes de alegar conformidade.
+
+**Evidências sugeridas:** Relatórios de testes de usabilidade, metodologias e resultados.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 25066:2016, retirada, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 25010:2023
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/78176.html).
+
+**O que estabelece ou orienta:** Modelo de qualidade de produto SQuaRE com nove características: adequação funcional, desempenho, compatibilidade, capacidade de interação, confiabilidade, segurança, manutenibilidade, flexibilidade e safety, relativa à prevenção de danos.
+
+**Como avaliar a aplicação:** Transformar as características relevantes em requisitos não funcionais, metas mensuráveis e critérios de aceitação.
+
+**Evidências sugeridas:** Matriz de atributos, métricas, testes e resultados por produto.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 25010:2023, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 5055:2021
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/80623.html).
+
+**O que estabelece ou orienta:** Medidas automatizadas de qualidade estrutural de código-fonte, a partir de violações de boas práticas capazes de produzir riscos ou custos de manutenção.
+
+**Como avaliar a aplicação:** Avaliar métricas e defeitos estruturais, sem confundir qualquer pontuação de lint com a medida padronizada.
+
+**Evidências sugeridas:** Relatórios de análise estática estrutural e acompanhamento de tendências.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 5055:2021, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC/IEEE 12207:2026
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/90219.html).
+
+**O que estabelece ou orienta:** Processos de ciclo de vida de software, de aquisição e definição até desenvolvimento, validação, operação, manutenção e retirada. Compatível com métodos ágeis, sem impor metodologia única.
+
+**Como avaliar a aplicação:** Definir etapas, responsabilidades, verificações, produtos de trabalho e manutenção proporcionais ao escopo.
+
+**Evidências sugeridas:** Processo documentado de desenvolvimento, registros de mudanças e entregas.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC/IEEE 12207:2026, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 20000-1:2018
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/70636.html).
+
+**O que estabelece ou orienta:** Requisitos de sistema de gestão de serviços de TI, incluindo planejamento, desenho, transição, entrega, avaliação e melhoria.
+
+**Como avaliar a aplicação:** Aplicar aos projetos que operam serviços com disponibilidade, incidentes, mudanças, continuidade e fornecedores.
+
+**Evidências sugeridas:** Catálogo de serviços, objetivos de nível de serviço e registros operacionais.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 20000-1:2018, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO 9001:2026
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/9001).
+
+**O que estabelece ou orienta:** Requisitos para sistema de gestão da qualidade com liderança, contexto, planejamento, recursos, operação, medição, auditoria e melhoria. A edição 2026 substitui a de 2015.
+
+**Como avaliar a aplicação:** Estabelecer objetivos, processos, responsáveis, indicadores e ações corretivas no nível institucional adequado.
+
+**Evidências sugeridas:** Política de qualidade, indicadores, revisões e evidências de melhoria.
+
+- [ ] Avaliar a aplicabilidade de ISO 9001:2026, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC/IEEE 90003:2018
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/74348.html).
+
+**O que estabelece ou orienta:** Orientações para interpretar e aplicar ISO 9001 à aquisição, desenvolvimento, operação e manutenção de software. Não cria requisitos adicionais à ISO 9001.
+
+**Como avaliar a aplicação:** Adaptar práticas de qualidade a projetos, requisitos, testes, configuração e suporte.
+
+**Evidências sugeridas:** Rastreabilidade das práticas de engenharia ao sistema de gestão.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC/IEEE 90003:2018, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC/IEEE 29148:2018
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/72089.html).
+
+**O que estabelece ou orienta:** Engenharia de requisitos: necessidades de interessados, elicitação, análise, especificação, validação, gerenciamento e rastreabilidade.
+
+**Como avaliar a aplicação:** Documentar requisitos claros, completos, consistentes e verificáveis, com justificativas e critérios de aceite.
+
+**Evidências sugeridas:** Especificações, histórias, critérios de aceite e histórico de mudanças.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC/IEEE 29148:2018, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC/IEEE 42010:2022
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/74393.html).
+
+**O que estabelece ou orienta:** Requisitos para descrições de arquitetura, ligando interessados, preocupações, pontos de vista, visões, modelos e justificativas. Não prescreve arquitetura específica.
+
+**Como avaliar a aplicação:** Registrar decisões, restrições, alternativas, integrações e visões de segurança, dados e implantação.
+
+**Evidências sugeridas:** Descrição arquitetural, diagramas, ADRs e trade-offs.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC/IEEE 42010:2022, registrar os controles escolhidos e comprovar sua execução.
+
+#### Série ISO/IEC/IEEE 29119
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/81291.html).
+
+**O que estabelece ou orienta:** Família de normas sobre conceitos, processos, documentação e técnicas de testes. A parte 1:2022 descreve os conceitos gerais.
+
+**Como avaliar a aplicação:** Definir estratégia e planos de testes, objetivos, desenho, execução, registros de resultados e tratamento de falhas.
+
+**Evidências sugeridas:** Planos, casos, resultados e testes automatizados rastreáveis.
+
+- [ ] Avaliar a aplicabilidade de Série ISO/IEC/IEEE 29119, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 38500:2024
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/81684.html).
+
+**O que estabelece ou orienta:** Princípios de governança de TI, para que a direção avalie, direcione e monitore tecnologia, responsabilidades, riscos e desempenho.
+
+**Como avaliar a aplicação:** Definir autoridades, critérios de decisão, prestação de contas e avaliação da tecnologia.
+
+**Evidências sugeridas:** Registros de decisões, papéis, políticas e indicadores.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 38500:2024, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 42001:2023
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/42001).
+
+**O que estabelece ou orienta:** Requisitos para sistema de gestão de IA, contemplando políticas, papéis, riscos, impactos, controles, avaliação e melhoria.
+
+**Como avaliar a aplicação:** Governar aquisição e uso de modelos, análise de vieses, supervisão humana, privacidade e monitoramento.
+
+**Evidências sugeridas:** Política de IA, inventário de modelos, avaliações de impacto e relatórios.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 42001:2023, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 27001:2022
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/27001).
+
+**O que estabelece ou orienta:** Requisitos para sistema de gestão de segurança da informação, com análise de riscos, tratamento, controles, auditoria e melhoria.
+
+**Como avaliar a aplicação:** Definir escopo do SGSI, riscos, seleção e justificativa de controles e revisões periódicas.
+
+**Evidências sugeridas:** Inventário, avaliação de risco, declaração de aplicabilidade e auditorias.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 27001:2022, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 27002:2022
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/75652.html).
+
+**O que estabelece ou orienta:** Orientações de controles organizacionais, de pessoas, físicos e tecnológicos para segurança da informação. Complementa ISO/IEC 27001.
+
+**Como avaliar a aplicação:** Selecionar controles de acesso, criptografia, backups, registros, fornecedores, desenvolvimento e incidentes.
+
+**Evidências sugeridas:** Políticas, configurações de controles, logs, evidências de testes e revisão.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 27002:2022, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 27701:2025
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/27701).
+
+**O que estabelece ou orienta:** Requisitos e orientações para sistema de gestão de privacidade de dados pessoais. A edição de 2025 pode ser aplicada independentemente, embora seja compatível com ISO/IEC 27001.
+
+**Como avaliar a aplicação:** Inventariar tratamentos, finalidades, responsabilidades, direitos dos titulares, riscos e retenção.
+
+**Evidências sugeridas:** Registro de operações, bases legais avaliadas, direitos dos titulares e avaliações de impacto.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 27701:2025, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 26585, projeto em desenvolvimento
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/93532.html).
+
+**O que estabelece ou orienta:** Projeto de framework para desenvolvimento seguro de software. A referência consultada consta em estágio pré-publicação, sem assumir requisitos definitivos.
+
+**Como avaliar a aplicação:** Monitorar a edição publicada e avaliar práticas de desenvolvimento seguro sem declarar conformidade ao projeto.
+
+**Evidências sugeridas:** Registros de revisão de código, ameaças, vulnerabilidades e ciclo de vida seguro.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 26585, projeto em desenvolvimento, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 27017:2025
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/82878.html).
+
+**O que estabelece ou orienta:** Orientações de controles de segurança específicos de serviços de nuvem para fornecedores e clientes.
+
+**Como avaliar a aplicação:** Delimitar responsabilidade compartilhada, identidades, configurações, monitoramento e fornecedores.
+
+**Evidências sugeridas:** Matriz de responsabilidades, contratos, controles e evidências de configuração.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 27017:2025, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 27018:2025
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/27018).
+
+**O que estabelece ou orienta:** Orientações para proteção de dados pessoais em nuvens públicas quando o provedor atua como operador desses dados.
+
+**Como avaliar a aplicação:** Verificar tratamento, acesso, subcontratados, transparência, retenção e eliminação no provedor.
+
+**Evidências sugeridas:** Contratos, avaliação de provedores e inventário de fluxos de dados.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 27018:2025, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 33001:2015
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/54175.html).
+
+**O que estabelece ou orienta:** Conceitos e terminologia para avaliação de capacidade de processos e estrutura da família ISO/IEC 330xx.
+
+**Como avaliar a aplicação:** Definir critérios para avaliar práticas pela sua execução e resultados, não apenas pela existência de documentos.
+
+**Evidências sugeridas:** Modelo de avaliação, escopo, indicadores e registros de auditoria.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 33001:2015, registrar os controles escolhidos e comprovar sua execução.
+
+#### ISO/IEC 33020:2019
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/54176.html).
+
+**O que estabelece ou orienta:** Modelo de medição da capacidade de processos dentro da família ISO/IEC 330xx.
+
+**Como avaliar a aplicação:** Aplicar avaliação de atributos e capacidade de processos, caso seja adotado programa formal.
+
+**Evidências sugeridas:** Evidências de atributos, resultados e plano de melhoria.
+
+- [ ] Avaliar a aplicabilidade de ISO/IEC 33020:2019, registrar os controles escolhidos e comprovar sua execução.
+
+#### Série ISO/IEC 15504, SPICE, histórica
+
+**Fonte:** [organização responsável](https://www.iso.org/standard/38932.html).
+
+**O que estabelece ou orienta:** Antecessora histórica dos modelos ISO/IEC 330xx de avaliação de processos. Diversas partes foram substituídas.
+
+**Como avaliar a aplicação:** Usar como contexto histórico, preferindo as referências ISO/IEC 330xx atuais.
+
+**Evidências sugeridas:** Registro das equivalências e dos modelos adotados.
+
+- [ ] Avaliar a aplicabilidade de Série ISO/IEC 15504, SPICE, histórica, registrar os controles escolhidos e comprovar sua execução.
+
+### 12.2. Referências complementares do guia de engenharia de software
+
+As referências complementares ampliam o catálogo sem transformar toda a coleção em obrigação automática. As páginas específicas verificadas apontam para o catálogo ISO. Quando a edição ou a ficha não foi confirmada, o link é apenas o catálogo geral, e o status deve ser apurado antes de qualquer declaração formal.
+
+#### Usabilidade, experiência e comunicação
+
+**[ISO 9241-11:2018](https://www.iso.org/standard/63500.html).** Eficácia, eficiência e satisfação no contexto de uso, avaliadas com tarefas de usuários. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 9241-110:2020](https://www.iso.org/standard/75258.html).** Princípios de interação como autoclaridade, controle, capacidade de aprendizagem e tolerância a erros. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 9241-171:2025](https://www.iso.org/standard/86308.html).** Orientações de acessibilidade de software, incluindo tecnologias assistivas e barreiras de interação. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 9241-210:2019](https://www.iso.org/standard/77520.html).** Processo centrado no usuário, com contexto, necessidades, soluções e avaliação iterativa. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 9241-220:2019](https://www.iso.org/standard/63462.html).** Processos organizacionais para tornar pesquisa e projeto centrado nas pessoas consistentes e avaliáveis. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/TR 16982:2002](https://www.iso.org/standard/31176.html).** Métodos de investigação e avaliação de usabilidade, referência técnica de apoio. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+#### Qualidade de dados, métricas e avaliação
+
+**[Série ISO/IEC 25000](https://www.iso.org/standards.html).** Organização SQuaRE de requisitos, modelos, medições e avaliação de qualidade de sistemas e software. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25012:2008](https://www.iso.org/standard/35736.html).** Modelo de qualidade de dados, com exatidão, completude, consistência, atualidade e rastreabilidade. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25022:2016](https://www.iso.org/standard/35746.html).** Medição da qualidade em uso em condições e tarefas reais. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25023:2016](https://www.iso.org/standard/35747.html).** Medidas de qualidade de produto vinculadas a atributos e metas verificáveis. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25024:2015](https://www.iso.org/standard/35749.html).** Medidas de qualidade de dados, úteis em importações, transformações e bases analíticas. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25040:2011](https://www.iso.org/standard/35765.html).** Processo estruturado de planejamento, execução e comunicação da avaliação de qualidade. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25041:2012](https://www.iso.org/standard/35766.html).** Orientações para avaliar software por desenvolvedores, compradores e avaliadores independentes. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25045:2010](https://www.iso.org/standard/35770.html).** Avaliação da capacidade de recuperação de software e sistemas. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 25051:2014](https://www.iso.org/standard/61580.html).** Qualidade e testes de produtos prontos para uso, como softwares de terceiros. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+#### Ciclo de vida, documentação, engenharia e modelagem
+
+**[ISO/IEC/IEEE 15288:2023](https://www.iso.org/standard/81702.html).** Processos do ciclo de vida de sistemas completos, incluindo software, pessoas, hardware e instalações. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC/IEEE 15289:2019](https://www.iso.org/standard/71950.html).** Finalidade e conteúdo de documentos e registros produzidos no ciclo de vida. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC/IEEE 24748-1:2024](https://www.iso.org/standard/84709.html).** Diretrizes para definir e adaptar modelos de ciclo de vida, complementando 12207 e 15288. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC/IEEE 14764:2022](https://www.iso.org/standard/80710.html).** Manutenção corretiva, adaptativa, perfectiva e preventiva. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC/IEEE 15939:2017](https://www.iso.org/standard/71197.html).** Processos para definir medidas a partir de perguntas e necessidades de informação. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC/IEEE 24765:2017](https://www.iso.org/standard/71952.html).** Vocabulário padronizado de engenharia de software e sistemas. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 29110](https://www.iso.org/standards.html).** Perfis e orientações de ciclo de vida para equipes e entidades muito pequenas. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 19505, UML](https://www.iso.org/standard/32624.html).** Linguagem padronizada de modelagem de estrutura e comportamento de sistemas de software. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 19514:2017, SysML](https://www.iso.org/standard/65231.html).** Linguagem de modelagem de sistemas, com próxima geração ainda em desenvolvimento. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 19510, BPMN](https://www.iso.org/standards.html).** Notação padronizada de processos de negócio e fluxos de trabalho. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 15910, verificar edição](https://www.iso.org/standards.html).** Documentação voltada ao usuário, citada no material fornecido e pendente de verificação de status. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+#### Segurança, riscos, nuvem e gestão de terceiros
+
+**[ISO/IEC 27000:2018](https://www.iso.org/standard/73906.html).** Vocabulário e visão geral de sistemas de gestão de segurança da informação. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 27005:2022](https://www.iso.org/standard/80585.html).** Avaliação e tratamento de riscos de segurança da informação. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 27034](https://www.iso.org/standard/44378.html).** Práticas de segurança de aplicações ao longo de seu ciclo de vida. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 27035](https://www.iso.org/standards.html).** Preparação, identificação, resposta e melhoria da gestão de incidentes de segurança. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 27036](https://www.iso.org/standards.html).** Segurança da informação em relações com fornecedores e prestadores. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 15408, Common Criteria](https://www.iso.org/standards.html).** Avaliação de requisitos e garantias de segurança em produtos de tecnologia. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 27400](https://www.iso.org/standards.html).** Recomendações de cibersegurança e privacidade em ecossistemas IoT. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 31000:2018](https://www.iso.org/standard/65694.html).** Princípios e orientações de gestão geral de riscos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 17788:2014, histórica](https://www.iso.org/standard/60544.html).** Vocabulário anterior de nuvem, sucedido por referências da família 22123. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 17789:2014, histórica](https://www.iso.org/standard/60545.html).** Arquitetura de referência de nuvem anterior à família 22123. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 22123:2023](https://www.iso.org/standard/82757.html).** Vocabulário, conceitos e arquitetura de referência para serviços de nuvem. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 19770](https://www.iso.org/standards.html).** Inventário e gestão de ativos, instalações e licenciamento de software. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+#### Inteligência artificial e governança de dados
+
+**[ISO/IEC 22989:2022](https://www.iso.org/standard/74296.html).** Terminologia básica e conceitos de inteligência artificial. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 23053:2022](https://www.iso.org/standard/74438.html).** Framework conceitual para componentes e fases de sistemas que usam aprendizado de máquina. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 23894:2023](https://www.iso.org/standard/77304.html).** Gestão de riscos de IA, inclusive vieses, privacidade, robustez e impacto. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 5338](https://www.iso.org/standards.html).** Processos de ciclo de vida de sistemas de inteligência artificial. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 42005:2025](https://www.iso.org/standards.html).** Diretrizes para avaliação de impactos de sistemas de IA sobre pessoas e direitos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 5259](https://www.iso.org/standards.html).** Qualidade de dados utilizados em analytics e aprendizado de máquina. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 38507](https://www.iso.org/standards.html).** Governança organizacional e responsabilidades sobre o uso de IA. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO 8000](https://www.iso.org/standards.html).** Qualidade de dados e de dados mestres. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Série ISO/IEC 38505](https://www.iso.org/standards.html).** Governança de dados, responsabilidades e decisões sobre seu uso. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO/IEC 30141](https://www.iso.org/standards.html).** Arquitetura de referência para ecossistemas de Internet das Coisas. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+#### Normas setoriais, aplicáveis apenas em casos específicos
+
+**[IEC 61508](https://www.iso.org/standards.html).** Segurança funcional de sistemas eletrônicos e programáveis. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 26262](https://www.iso.org/standards.html).** Segurança funcional de veículos e componentes automotivos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[IEC 62304](https://www.iso.org/standards.html).** Processos de ciclo de vida para software de dispositivos médicos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ISO 14971](https://www.iso.org/standards.html).** Gestão de risco de dispositivos médicos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[EN 50128](https://www.iso.org/standards.html).** Software de sinalização e proteção ferroviária. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[DO-178C](https://www.iso.org/standards.html).** Garantia de software para equipamentos aeronáuticos. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[ARP4754A](https://www.iso.org/standards.html).** Engenharia de sistemas e aeronaves civis. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+**[Automotive SPICE, modelo setorial](https://www.iso.org/standards.html).** Avaliação de capacidade de processos de desenvolvimento automotivo, sem ser norma ISO independente. **Evidência prática para avaliação:** definir requisitos e registros pertinentes ao escopo, como documentação, métricas, testes, controles e decisões de implementação.
+
+### 12.3. Verificação normativa e registro de evidências
+
+- [ ] Manter matriz das normas relevantes por projeto, serviço, risco e tipo de atividade.
+- [ ] Confirmar número, edição, status de publicação e eventual substituição da norma.
+- [ ] Separar exigências normativas, orientações de boas práticas e propostas internas.
+- [ ] Identificar quais cláusulas e controles foram adotados e quais são inaplicáveis.
+- [ ] Mapear os requisitos para os controles automatizados e humanos das seções anteriores.
+- [ ] Associar responsável, evidência, último resultado e periodicidade a cada avaliação.
+- [ ] Registrar justificativas, riscos residuais e exceções com prazo e reavaliação.
+- [ ] Não afirmar certificação, acreditação nem atendimento integral sem avaliação formal.
+- [ ] Revisar periodicamente referências históricas, retiradas ou em desenvolvimento.
+
+**Prioridades propostas:** para software, 12207, 29148, 42010, 29119 e 25010. Para segurança e privacidade, 27001, 27002 e 27701. Para inteligência artificial, 42001 e gestão de riscos. Para serviços operacionais, 20000-1. Para programas institucionais, ISO 9001. PCI DSS somente mediante avaliação específica do ambiente de pagamentos.
+
+**Catálogos institucionais:** [ISO](https://www.iso.org/standards.html), [IEC](https://webstore.iec.ch/), [IEEE](https://standards.ieee.org/) e [PCI SSC](https://www.pcisecuritystandards.org/pt/document_library/).
+
 ## Prioridades sugeridas
 
 A organização das tarefas abaixo é uma sugestão de implementação, não uma ordem obrigatória do Open Source Guides.
