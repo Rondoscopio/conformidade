@@ -274,9 +274,11 @@ Como evidência, conferir as configurações efetivas do repositório, a exclus�
 
 ### 11.4. Ambiente reproduzível, just, Docker e Compose
 
+**Padrão do Rondoscópio.** Toda tarefa do projeto roda em contêiner Docker, tanto no desenvolvimento local quanto no CI. No host ou runner ficam apenas os comandos de orquestração, como Docker, Compose e Just.
+
 - [ ] Padronizar comandos para lint, testes, verificação e geração de artefatos.
-- [ ] Avaliar just como interface única para comandos do projeto.
-- [ ] Usar Docker quando necessário para reproduzir o ambiente de validação.
+- [ ] Usar Just para orquestrar comandos Docker, mantendo a lógica de execução e as dependências dentro dos contêineres.
+- [ ] Executar em Docker a instalação de dependências, os builds, o lint, os testes, as validações, as auditorias, a geração de artefatos e os serviços do projeto.
 - [ ] Usar Docker Compose quando houver ferramentas ou serviços coordenados.
 - [ ] Documentar instalação, desenvolvimento, testes e comandos de manutenção.
 - [ ] Organizar configurações comuns sem ocultar diferenças entre repositórios.
