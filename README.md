@@ -248,10 +248,8 @@ Um item só deverá ser marcado como concluído quando houver evidência de conf
 - [ ] Configurar CODEOWNERS com responsáveis por áreas e arquivos críticos.
 - [ ] Confirmar que os code owners possuem acesso e permissões adequados.
 - [ ] Definir branch principal e política de integração de alterações.
-- [ ] Configurar GitHub Rulesets ou Branch Protection para a branch principal.
-- [ ] Impedir force push na branch principal com proteção de histórico.
-- [ ] Impedir exclusão da branch principal por regra de proteção.
-- [ ] Exigir pull request antes do merge quando aplicável.
+- [ ] Habilitar somente **merge commit** nas configurações do repositório e desabilitar squash merge e rebase merge.
+- [ ] Habilitar a exclusão automática da branch de origem após o merge do pull request. Respeitar as proteções das branches que precisam ser mantidas.
 - [ ] Definir critérios de revisão e aprovação por outros mantenedores.
 - [ ] Exigir revisão de code owners para alterações sensíveis quando necessário.
 - [ ] Definir e exigir verificações de qualidade efetivamente executadas.
@@ -262,6 +260,17 @@ Um item só deverá ser marcado como concluído quando houver evidência de conf
 - [ ] Restringir bypasses com justificativa e rastreabilidade.
 - [ ] Proteger arquivos de CI, CODEOWNERS e configurações de segurança contra modificações indevidas.
 - [ ] Testar branch protection e quality gate com pull requests de verificação.
+
+**Padrão de rulesets do Rondoscópio.** Ativar os quatro rulesets abaixo para a branch padrão e para `main` quando forem distintas. Configurar as regras de PR para permitir somente merge commit.
+
+| Ruleset | Controle exigido | Exceções |
+| --- | --- | --- |
+| `integrity` | Bloquear force push. | Nenhuma. |
+| `keep` | Bloquear a exclusão da branch protegida. | Nenhuma. |
+| `quality` | Exigir PR, branch atualizada com a base e aprovação do job agregador `gate` do workflow `ci.yaml`. Vincular o check ao GitHub Actions e confirmar seu nome de exibição. | Nenhuma. |
+| `review` | Invalidar aprovações após novos pushes, exigir aprovação do último push por outra pessoa e exigir a resolução das conversas de revisão. | Bypass apenas para responsáveis explicitamente autorizados, com justificativa e registro. A exceção vale somente para `review`. |
+
+Como evidência, conferir as configurações efetivas do repositório, a exclusão automática de uma branch elegível após merge e o bloqueio de um PR com gate pendente ou reprovado, inclusive para quem tem bypass de revisão. [Exemplo de rulesets](https://github.com/Rondoscopio/osint-rondonia/rules)
 
 ### 11.4. Ambiente reproduzível, just, Docker e Compose
 
@@ -397,13 +406,12 @@ Um item só deverá ser marcado como concluído quando houver evidência de conf
 
 ### 11.12. Integração contínua, quality gate e publicação
 
-- [ ] Criar workflows de validação para pull requests.
-- [ ] Definir eventos que disparam os workflows.
+- [ ] Definir o workflow principal com nome `CI` no arquivo `.github/workflows/ci.yaml`. Executá-lo em todos os pull requests, inclusive os que alteram apenas documentação, e em pushes para a branch padrão.
 - [ ] Organizar verificações por categoria, linguagem ou matriz quando apropriado.
 - [ ] Distinguir checks obrigatórios dos informativos.
-- [ ] Criar quality gate que consolide o resultado de todas as verificações obrigatórias.
-- [ ] Fazer o quality gate falhar quando alguma verificação obrigatória falhar.
-- [ ] Não aprovar jobs cancelados, pendentes ou não executados sem regra explícita.
+- [ ] Criar no `ci.yaml` um job `gate` com nome de exibição estável. Declarar os jobs obrigatórios em `needs` e usar `if: ${{ always() }}` para que o gate avalie seus resultados mesmo quando uma dependência falhar ou for pulada.
+- [ ] Limitar o job `gate` a ler e consolidar os resultados em `needs`. Checkout, instalação de ferramentas, builds, lint e testes ficam nos jobs de verificação.
+- [ ] Aprovar o gate somente se todos os jobs obrigatórios retornarem `success`. Resultados ausentes, reprovados, cancelados ou pulados não liberam o merge. Um gate ainda pendente também bloqueia o merge.
 - [ ] Restringir segredos e permissões de escrita nos workflows.
 - [ ] Revisar permissões de ações externas e ambientes de execução.
 - [ ] Controlar o cache sem comprometer a integridade dos resultados.
@@ -414,6 +422,8 @@ Um item só deverá ser marcado como concluído quando houver evidência de conf
 - [ ] Configurar no ruleset o quality gate que efetivamente é executado.
 - [ ] Testar bloqueio de merge com falha intencional em branch de teste.
 - [ ] Testar o fluxo de integração após aprovação das verificações.
+
+O OSINT Rondônia é a referência para o job agregador. [Workflow CI](https://github.com/Rondoscopio/osint-rondonia/blob/main/.github/workflows/ci.yaml)
 
 ### 11.13. Evidências, auditoria e manutenção da conformidade
 
